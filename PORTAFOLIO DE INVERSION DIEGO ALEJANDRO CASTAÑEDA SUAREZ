@@ -1,0 +1,313 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM9kdd+8QSsfSgAvZFyzXKd",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/alejocast2511/LENGUAJE-DE-PROGRAMACION-DCS/blob/main/PORTAFOLIO%20DE%20INVERSION%20DIEGO%20ALEJANDRO%20CASTA%C3%91EDA%20SUAREZ\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 13,
+      "metadata": {
+        "id": "jRbxFoe5McS9"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 📊 Portafolio de Inversión lPITM\n",
+        "\n",
+        "Gestion de informacion financiera de los clientes de la compañia LPITM."
+      ],
+      "metadata": {
+        "id": "WR2aqdZYOjS1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Información de los clientes\n",
+        "clientes = [\"Juan Perez\", \"Maria Rodriguez\", \"Carlos Lopez\", \"Ana Gomez\"]\n",
+        "montos_invertidos = [10000, 15000, 20000, 18000]\n",
+        "rendimientos = [5.5, 6.0, 4.0, 7.5]\n",
+        "\n",
+        "print(\"Clientes:\", clientes)\n",
+        "print(\"Montos invertidos:\", montos_invertidos)\n",
+        "print(\"Rendimientos:\", rendimientos)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Y8L0d7UOOrp6",
+        "outputId": "e6b8b368-aef6-49bf-8b70-af83d63915fb"
+      },
+      "execution_count": 14,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Clientes: ['Juan Perez', 'Maria Rodriguez', 'Carlos Lopez', 'Ana Gomez']\n",
+            "Montos invertidos: [10000, 15000, 20000, 18000]\n",
+            "Rendimientos: [5.5, 6.0, 4.0, 7.5]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "cliente_1 = (clientes[0], montos_invertidos[0], rendimientos[0])\n",
+        "cliente_2 = (clientes[1], montos_invertidos[1], rendimientos[1])\n",
+        "cliente_3 = (clientes[2], montos_invertidos[2], rendimientos[2])\n",
+        "cliente_4 = (clientes[3], montos_invertidos[3], rendimientos[3])\n",
+        "\n",
+        "print(\"Tuplas de clientes:\")\n",
+        "print(cliente_1)\n",
+        "print(cliente_2)\n",
+        "print(cliente_3)\n",
+        "print(cliente_4)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Duofw7kIPORC",
+        "outputId": "bdb1241f-04b9-4249-c0eb-d1ba9619f242"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Tuplas de clientes:\n",
+            "('Juan Perez', 10000, 5.5)\n",
+            "('Maria Rodriguez', 15000, 6.0)\n",
+            "('Carlos Lopez', 20000, 4.0)\n",
+            "('Ana Gomez', 18000, 7.5)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "portafolio = {\n",
+        "    \"Juan Perez\": {\"monto_invertido\": 10000, \"rendimiento\": 5.5},\n",
+        "    \"Maria Rodriguez\": {\"monto_invertido\": 15000, \"rendimiento\": 6.0},\n",
+        "    \"Carlos Lopez\": {\"monto_invertido\": 20000, \"rendimiento\": 4.0},\n",
+        "    \"Ana Gomez\": {\"monto_invertido\": 18000, \"rendimiento\": 7.5}\n",
+        "}\n",
+        "\n",
+        "print(\"Portafolio de clientes:\")\n",
+        "print(portafolio)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1sXpUOFJPQ0c",
+        "outputId": "7773b476-8649-4ac0-a64a-430c84fa8a46"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Portafolio de clientes:\n",
+            "{'Juan Perez': {'monto_invertido': 10000, 'rendimiento': 5.5}, 'Maria Rodriguez': {'monto_invertido': 15000, 'rendimiento': 6.0}, 'Carlos Lopez': {'monto_invertido': 20000, 'rendimiento': 4.0}, 'Ana Gomez': {'monto_invertido': 18000, 'rendimiento': 7.5}}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Clientes con rendimiento superior al 5%:\")\n",
+        "for cliente, datos in portafolio.items():\n",
+        "    if datos[\"rendimiento\"] > 5:\n",
+        "        print(cliente, \"-\", datos[\"rendimiento\"], \"%\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "u1ScYLnNPimS",
+        "outputId": "641442f6-f39f-48e0-feab-41dd944e9243"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Clientes con rendimiento superior al 5%:\n",
+            "Juan Perez - 5.5 %\n",
+            "Maria Rodriguez - 6.0 %\n",
+            "Ana Gomez - 7.5 %\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "rendimiento_total = 0\n",
+        "for cliente, datos in portafolio.items():\n",
+        "    rendimiento_cliente = datos[\"monto_invertido\"] * datos[\"rendimiento\"] / 100\n",
+        "    rendimiento_total += rendimiento_cliente\n",
+        "\n",
+        "print(\"Rendimiento total del portafolio (USD):\", rendimiento_total)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "muU9Qa2ZQUZt",
+        "outputId": "a479f0eb-c494-4fe9-fa20-48ad1fa25d49"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Rendimiento total del portafolio (USD): 3600.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mayor_rendimiento = 0\n",
+        "cliente_top = \"\"\n",
+        "\n",
+        "for cliente, datos in portafolio.items():\n",
+        "    rendimiento_cliente = datos[\"monto_invertido\"] * datos[\"rendimiento\"] / 100\n",
+        "    if rendimiento_cliente > mayor_rendimiento:\n",
+        "        mayor_rendimiento = rendimiento_cliente\n",
+        "        cliente_top = cliente\n",
+        "\n",
+        "print(\"Cliente con mayor rendimiento absoluto:\", cliente_top, \"-\", mayor_rendimiento, \"USD\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8k1s9OEVQoaq",
+        "outputId": "9ef86ebb-d02b-4ebf-aaad-a95b3755ec5e"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cliente con mayor rendimiento absoluto: Ana Gomez - 1350.0 USD\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "portafolio[\"Carlos Lopez\"][\"monto_invertido\"] = 25000\n",
+        "print(\"Actualización Carlos Lopez:\", portafolio[\"Carlos Lopez\"])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Bj44HzLlQ3gN",
+        "outputId": "3ceb525d-41b4-43f5-8480-d1d398ddac5d"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Actualización Carlos Lopez: {'monto_invertido': 25000, 'rendimiento': 4.0}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "portafolio[\"Laura Fernandez\"] = {\"monto_invertido\": 22000, \"rendimiento\": 6.8}\n",
+        "print(\"Cliente agregado:\", portafolio[\"Laura Fernandez\"])\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8sO0EiQcQ4Vr",
+        "outputId": "d44969d5-b4ed-465f-f947-097609a8c308"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cliente agregado: {'monto_invertido': 22000, 'rendimiento': 6.8}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "portafolio.pop(\"Ana Gomez\")\n",
+        "print(\"Portafolio después de modificaciones:\")\n",
+        "print(portafolio)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wV6CvatcRDB-",
+        "outputId": "6c04337e-c5d7-4fac-d4fc-67c3cdffb30b"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Portafolio después de modificaciones:\n",
+            "{'Juan Perez': {'monto_invertido': 10000, 'rendimiento': 5.5}, 'Maria Rodriguez': {'monto_invertido': 15000, 'rendimiento': 6.0}, 'Carlos Lopez': {'monto_invertido': 25000, 'rendimiento': 4.0}, 'Laura Fernandez': {'monto_invertido': 22000, 'rendimiento': 6.8}}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
